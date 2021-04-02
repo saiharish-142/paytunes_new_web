@@ -1,0 +1,195 @@
+body{
+  margin: 0;
+}
+.App {
+    text-align: center;
+    min-height: 100vh;
+    /* height: fit-content !important; */
+    background-color: whitesmoke;
+  }
+  
+  .navbar{
+    background-color: rgb(209, 60, 60);
+    height: 8vh;
+    position: sticky !important;
+    top: 0;
+    z-index: 3 !important;
+    /* font-family: 'Kaushan Script', cursive; */
+  }
+
+  .bg_1{
+    background-color: orangered;
+     
+  }
+
+.button{
+  display: inline-block;
+        background-color:darkblue;
+        border-radius: 10px;
+        border: 4px double #cccccc;
+        color: #eeeeee;
+        text-align: center;
+        font-size: 15px;
+        padding: 10px;
+        width: 120px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+}
+ 
+
+  .navbar__logo{
+    font-family: 'Kaushan Script', cursive;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 30px;
+  }
+  
+  .navbar__icons{
+    float: right;
+    margin-top: -6vh !important;
+    margin: 0 10px;
+  }
+  
+  .login{
+    width: 40vw !important;
+    margin: 20px auto;
+    border: 1px lightgray solid;
+    float: left;
+    margin-left: 2%;
+    
+    /* justify-content: center;
+    align-items: center; */
+  }
+
+  #rcorners2 {
+    border-radius: 25px;
+    border: 2px 
+    /* padding: 20px; 
+    width: 200px;
+    height: 150px;   */
+  }
+
+  .login Paper{
+    width: 10%;
+  }
+  
+  .login__box{
+    height: 450px;
+    margin: 0 auto;
+    width: 50%;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login__box button{
+    margin: 20px 0;
+  }
+  
+  .navbar__dasboard{
+    float: left;
+    margin-top: -6vh;
+    z-index:2;
+  }
+  
+  .login__title{
+    font-size: 60px;
+    font-weight: bolder;
+    padding-bottom: 50%;
+    color: lightslategray;
+  }
+  
+  .dashmenu{
+    float: left;
+    width: 250px;
+    /* background-color: whitesmoke; */
+    border: 1px lightgray solid;
+    height: 92vh;
+  }
+  
+  .dashmenu__item{
+    cursor: pointer;
+    margin: 5px auto;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    height: 60px;
+    /* padding: 20px; */
+  }
+  .dashboard{
+    margin: 10px auto;
+    /* margin-right: 50px; */
+    padding: 20px;
+    width: 80vw;
+    /* float: right; */
+  }
+  
+  .mangeads__report{
+    cursor: pointer;
+  }
+  
+  .mangeads__report:hover{
+    color: blue;
+    /* font-size: medium; */
+  }
+  
+  .breed_paper{
+    display: flex;
+    height: 40px;
+    min-width: 50%;
+    max-width: fit-content;
+    padding: 5px 20px;
+    margin-top: -57px;
+    margin-left: 150px;
+    overflow: hidden;
+  }
+  
+  .titleManger{
+    display: flex;
+    width: 80%;
+    margin: 10px auto ;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .titleManger div{
+    margin: 0 20px;
+    width: 30%;
+  }
+  
+  @media screen and (max-width: 700px){
+    .navbar{
+      height: 10vh;
+    }
+    .navbar__icons{
+    margin-top: -7vh !important;
+    /* margin-top: -20vh; */
+      /* display: none; */
+    }
+    .navbar__logo{
+      font-size: 26px;
+      padding-top: 10px;
+    }
+    .login{
+      width: 80vw;
+    }
+    .login__box{
+      padding: 30px;
+    }
+    .dashboard{
+      overflow: auto;
+      width: 90vw;
+    }
+    .breed_paper{
+      margin-left: 100px;
+      width: 65%;
+    }
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;  
+}
