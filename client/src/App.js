@@ -46,7 +46,7 @@ function App() {
             exact
             render={()=>(state ? <Redirect to='/dashboard' />: <Redirect to='/login' />)}
             />
-      {state && <>
+      {/* {state && <> */}
       <Navbar/>
         <Route
       path='/dashboard'
@@ -81,11 +81,12 @@ function App() {
       />
       <Route
       path='/dashboard/c/campaign/new'
+      exact
       render={()=>(<LineItem/>)}
       
       />
-      </>
-      }
+      {/* </> */}
+      {/* } */}
       
       </BrowserRouter>
     </div>

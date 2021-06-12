@@ -91,7 +91,7 @@ export default function NewCampaign(){
     
       <div style={{textAlign:'right',marginRight:'2%'}}>
       <button type="button" tabIndex="0" id class="button-footer"  >Create Campaign Without Line Item</button>
-      <button type="submit" tabIndex="0" id class="button-footer2"  onClick={history.push('/dashboard/c/campaign/new')} >Next:Create Line Item</button>
+      <button type="submit" tabIndex="0" id class="button-footer2"  onClick={()=>history.push('/dashboard/c/campaign/new')} >Next:Create Line Item</button>
       </div>
       
             
