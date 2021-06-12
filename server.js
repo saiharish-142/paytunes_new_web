@@ -26,8 +26,9 @@ mongoose.connection.on('error',err=>{
 })
 
 const userrouter=require('./routes/user_routes')
+const advertiserrouter=require('./routes/advertiser')
 app.use('/user',userrouter)
-
+app.use('/advertiser',advertiserrouter)
 
 
 

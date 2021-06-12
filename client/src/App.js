@@ -1,28 +1,95 @@
 // import logo from './logo.svg';
 import './App.css';
 import Login from './components/login'
-import React, { useReducer } from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import React, { useEffect, useReducer } from 'react'
+import { BrowserRouter, Redirect, Route } from 'react-router-dom'
 import {Initialstate,reducer} from './reducer/reducer'
-export const Usercontext=React.createContext()
+import Advertiser from './components/Advertiser'
+import Navbar from './components/Navbar';
+import Create_Advertiser from './components/create_advertiser'
+import Create_User from './components/create_user'
+import Dashboard from './components/dashboard';
+import Update_User from './screens/update_user';
+import Update_Advertiser from './screens/update_advertiser'
+import NewCampaign from './screens/newcampaign'
+import LineItem from './screens/lineitem'
+export const UserContext=React.createContext()
+
 
 
 function App() {
 
-  const [state,dispatch]=useReducer(reducer,Initialstate)
+  let [state,dispatch]=useReducer(reducer,Initialstate)
+  //console.log(state)
+
+  useEffect(()=>{
+    const user=JSON.parse(localStorage.getItem('user'))
+    console.log(user)
+    if(user){
+      dispatch({type:'USER',payload:user})
+    }else{
+       <Redirect to='/login' />
+    }
+  },[])
 
   return (
-    <Usercontext.Provider value={{state,dispatch}}>
+    <UserContext.Provider value={{state,dispatch}}>
     <div className="App">
       <BrowserRouter>
       <Route 
       path='/login'
-      render={()=>(<Login/>)}
+      render={()=>(state?(<Redirect to='/'/>):(<Login/>))}
       exact
       />
+      <Route
+            path='/'
+            exact
+            render={()=>(state ? <Redirect to='/dashboard' />: <Redirect to='/login' />)}
+            />
+      {state && <>
+      <Navbar/>
+        <Route
+      path='/dashboard'
+      render={()=>(<Dashboard/>)}
+      exact
+      />
+      <Route
+      path='/advertisers'
+      render={()=>(<Advertiser/>)}
+      exact
+      />
+      <Route
+      path='/advertiser/new'
+      render={()=>(<Create_Advertiser/>)}
+      />
+      <Route
+      path='/advertisers/new/user'
+      render={()=>(<Create_User/>)}
+      />
+      <Route
+      path='/advertisers/user/update/:user'
+      render={()=>(<Update_User/>)}
+      />
+      <Route
+      path='/advertisers/advertiser/update/:advertiser'
+      render={()=>(<Update_Advertiser/>)}
+      />
+      <Route
+      path='/dashboard/new/campaign'
+      render={()=>(<NewCampaign/>)}
+      exact
+      />
+      <Route
+      path='/dashboard/c/campaign/new'
+      render={()=>(<LineItem/>)}
+      
+      />
+      </>
+      }
+      
       </BrowserRouter>
     </div>
-    </Usercontext.Provider>
+    </UserContext.Provider>
   );
 }
 
