@@ -72,11 +72,11 @@ function App() {
       />
       <Route
       path='/advertisers/advertiser/update/:advertiser'
-      render={()=>(<Update_Advertiser/>)}
+      render={()=><Update_Advertiser/>}
       />
       <Route
       path='/dashboard/new/campaign'
-      render={()=>(<NewCampaign/>)}
+      render={()=><NewCampaign/>}
       exact
       />
       <Route

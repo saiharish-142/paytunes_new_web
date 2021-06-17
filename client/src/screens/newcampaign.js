@@ -80,7 +80,7 @@ export default function NewCampaign(){
               <div class="radio-toolbar" onChange={(e)=>setActive(e.target.value)} >
                   <input type="radio" id="active" name="Active" value="true"/>
                   <label for="active">Yes</label>
-                  <input type="radio" id="inActive" name="inActive" value="false"/>
+                  <input type="radio" id="inActive" name="Active" value="false"/>
                   <label for="inActive">No</label>
               </div>
               
